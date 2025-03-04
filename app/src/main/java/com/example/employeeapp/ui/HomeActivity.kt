@@ -1,54 +1,55 @@
 package com.example.employeeapp.ui
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import app.MyApplication
 import com.example.employeeapp.R
 
 class HomeActivity : Activity() {
+
+    private lateinit var name: TextView
+    private lateinit var department: TextView
+    private lateinit var salary: TextView
+    private lateinit var date: TextView
+    private lateinit var rating: TextView
+    private lateinit var username: TextView
+    private lateinit var password: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_activity)
 
-        val name: TextView = findViewById(R.id.op_name)
-        val department: TextView = findViewById(R.id.op_department)
-        val salary: TextView = findViewById(R.id.op_salary)
-        val date: TextView = findViewById(R.id.op_date)
-        val rating: TextView = findViewById(R.id.op_rating)
-        val username: TextView = findViewById(R.id.op_username)
-        val password: TextView = findViewById(R.id.op_password)
+        name = findViewById(R.id.op_name)
+        department = findViewById(R.id.op_department)
+        salary = findViewById(R.id.op_salary)
+        date = findViewById(R.id.op_date)
+        rating = findViewById(R.id.op_rating)
+        username = findViewById(R.id.op_username)
+        password = findViewById(R.id.op_password)
 
-        name.text = (application as MyApplication).name
-        department.text = (application as MyApplication).department
-        salary.text = (application as MyApplication).salary
-        date.text = (application as MyApplication).date
-        rating.text = (application as MyApplication).rating
-        username.text = (application as MyApplication).username
-        password.text = (application as MyApplication).password
+        val editProfile: Button = findViewById(R.id.edit_profile)
 
-//        intent?.let {
-//            it.getStringExtra("name")?.let { intentName ->
-//                name.text = intentName
-//            }
-//            it.getStringExtra("department")?.let { intentDepartment ->
-//                department.text = intentDepartment
-//            }
-//            it.getStringExtra("salary")?.let { intentSalary ->
-//                salary.text = intentSalary
-//            }
-//            it.getStringExtra("date")?.let { intentDate ->
-//                date.text = intentDate
-//            }
-//            it.getStringExtra("rating")?.let { intentRating ->
-//                rating.text = intentRating
-//            }
-//            it.getStringExtra("username")?.let { intentUsername ->
-//                username.text = intentUsername
-//            }
-//            it.getStringExtra("password")?.let { intentPassword ->
-//                password.text = intentPassword
-//            }
-//        }
+        editProfile.setOnClickListener {
+            startActivity(Intent(this, EditProfileActivity::class.java))
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateUI()
+    }
+
+    private fun updateUI() {
+        val app = application as MyApplication
+        name.text = app.name
+        department.text = app.department
+        salary.text = app.salary
+        date.text = app.date
+        rating.text = app.rating
+        username.text = app.username
+        password.text = app.password
     }
 }

@@ -28,6 +28,10 @@
             android:name=".ui.HomeActivity"
             android:exported="false">
         </activity>
+        <activity
+            android:name=".ui.EditProfileActivity"
+            android:exported="false">
+        </activity>
     </application>
 
 </manifest>
