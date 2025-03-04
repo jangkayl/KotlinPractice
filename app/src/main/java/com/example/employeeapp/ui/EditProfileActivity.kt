@@ -29,8 +29,8 @@ class EditProfileActivity : Activity() {
         val saveButton: Button = findViewById(R.id.edit_save_button)
         val editButtonDate: Button = findViewById(R.id.edit_btn_date)
 
-        val editRatingTemp: RadioGroup = findViewById(R.id.edit_rating)
-        val editDateTemp: TextView = findViewById(R.id.edit_date)
+        val editRatingTemp: String = editRating.checkedRadioButtonId.toString()
+        val editDateTemp: String = editDate.text.toString()
 
         val app = (application as MyApplication)
 
@@ -84,11 +84,11 @@ class EditProfileActivity : Activity() {
                 }
             }
 
-            if (editRating.checkedRadioButtonId != editRatingTemp.checkedRadioButtonId) {
+            if (editRating.checkedRadioButtonId.toString() != editRatingTemp) {
                 isValid = true
             }
 
-            if (editDate.text != editDateTemp.text) {
+            if (editDate.text != editDateTemp) {
                 isValid = true
             }
 
@@ -105,12 +105,19 @@ class EditProfileActivity : Activity() {
             editSalary?.text?.toString()?.takeIf { it.isNotEmpty() }?.let { app.salary = it }
             editUsername?.text?.toString()?.takeIf { it.isNotEmpty() }?.let { app.username = it }
             editPassword?.text?.toString()?.takeIf { it.isNotEmpty() }?.let { app.password = it }
-            recreate()
 
-            val selectedRadioId = editRating?.checkedRadioButtonId
-            if (selectedRadioId != null && selectedRadioId != -1) {
-                app.rating = selectedRadioId.toString()
+            val selectedRadioId = editRating?.checkedRadioButtonId ?: -1
+
+            if (selectedRadioId != -1) {
+                val selectedRadioButton = findViewById<RadioButton>(selectedRadioId)
+                val radioIndex = editRating?.indexOfChild(selectedRadioButton) ?: -1
+
+                if (radioIndex != -1) {
+                    println("Selected RadioButton is: ${radioIndex + 1}")
+                    app.rating = (radioIndex + 1).toString();
+                }
             }
+
 
             Toast.makeText(this, "Saved changes successfully!", Toast.LENGTH_LONG).show()
 
