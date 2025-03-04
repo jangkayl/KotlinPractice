@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#f5f5f5">
+
+    <RelativeLayout
+        android:layout_width="333dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/rounded_drawable"
+        android:padding="20dp"
+        android:elevation="20dp">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Employee Record Management"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/input_employeeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginTop="7dp"
+            android:hint="Employee Name"
+            android:inputType="textPersonName"
+            android:background="@drawable/border_drawable"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:textColorHint="#808080" />
+
+        <EditText
+            android:id="@+id/input_department"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_employeeName"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border_drawable"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:inputType="text"
+            android:hint="Department" />
+        <EditText
+            android:id="@+id/input_salary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_department"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border_drawable"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="10dp"
+            android:hint="Salary" />
+
+        <TextView
+            android:id="@+id/select_date"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_date"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="-30dp"
+            android:layout_toRightOf="@+id/join_date"
+            android:text="Select date..."
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btn_date"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/input_salary"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/select_date"
+            android:text="date "
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/join_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_salary"
+            android:textColor="@color/black"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:text="Joining Date : "
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/performance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/join_date"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Performance Rating: "
+            android:textSize="16sp" />
+
+        <RadioGroup
+            android:id="@+id/radio_rating"
+            android:layout_below="@id/performance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:alpha="0.5">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"/>
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/input_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/radio_rating"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:background="@drawable/border_drawable"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:hint="Username" />
+
+        <EditText
+            android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_username"
+            android:layout_marginTop="10dp"
+            android:inputType="textPassword"
+            android:background="@drawable/border_drawable"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:hint="Password" />
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/input_password"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_drawable"
+            android:backgroundTint="#00ff22"
+            android:text="SAVE" />
+
+    </RelativeLayout>
+
+</LinearLayout>

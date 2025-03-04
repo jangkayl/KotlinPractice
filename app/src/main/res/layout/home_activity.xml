@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/op_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:textColor="@color/black"
+        android:text="Name"/>
+    <TextView
+        android:id="@+id/op_department"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:textColor="@color/black"
+        android:text="Department"/>
+    <TextView
+        android:id="@+id/op_salary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:textColor="@color/black"
+        android:text="Salary"/>
+    <TextView
+        android:id="@+id/op_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:textColor="@color/black"
+        android:text="Date"/>
+    <TextView
+        android:id="@+id/op_rating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:textColor="@color/black"
+        android:text="Rating"/>
+    <TextView
+        android:id="@+id/op_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:textColor="@color/black"
+        android:text="Username"/>
+    <TextView
+        android:id="@+id/op_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:textColor="@color/black"
+        android:text="Password"/>
+
+
+</LinearLayout>
